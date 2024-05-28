@@ -4,7 +4,7 @@ FROM --platform=linux/amd64 rockylinux:8.8
 # Install EPEL repository, HTTPD, OpenSSL, OpenSSL development libraries and dependencies, and clean up
 RUN yum -y install epel-release \
     && yum -y update \
-    && yum -y install httpd openssl openssl-devel mod_ssl procps iputils tree telnet less sudo wget gcc perl pcre-devel zlib-devel make \
+    && yum -y install httpd httpd-event openssl openssl-devel mod_ssl procps iputils tree telnet less sudo wget gcc perl pcre-devel zlib-devel make \
     && yum clean all \
     && rm -rf /var/cache/yum
 
